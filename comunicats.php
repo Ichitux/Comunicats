@@ -18,15 +18,7 @@
     <![endif]-->
   </head>
   <body>
-<script type="text/javascript">
-$(function() {
-  $('#selectComunicat').change(function(){
-    $('.colors').hide();
-    $('#' + $(this).val()).show();
-  });
-});
-</script>
-   <form class="form-horizontal">
+   <form class="form-horizontal" action="comunicats.php" method="post">
 <fieldset>
 
 <legend>Sistema d'enviament automàtic de correus</legend>
@@ -44,15 +36,15 @@ $(function() {
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectComunicat">Seleccionar Comunicat</label>
   <div class="col-md-4">
-    <select id="selectComunicat" name="selectComunicat" class="form-control">
+    <select id="selectComunicat[]" name="selectComunicat" class="form-control">
       <option value="com1">Comunicat 1</option>
       <option value="com2">Comunicat 2</option>
     </select>
   </div>
 </div>
-
+<?php include'valor.php'; ?>
 <!-- Select 2 -->
-<div class="hidden">
+<div class="form-group">
   <label class="col-md-4 control-label" for="selectComs">Comunicats</label>
   <div class="col-md-4">
     <select id="selectComs" name="selectComs" class="form-control">
@@ -64,7 +56,7 @@ $(function() {
 </div>
 
 <!-- Select 3 -->
-<div class="hidden">
+<div class="form-group">
   <label class="col-md-4 control-label" for="selectSubclass">Casuístiques</label>
   <div class="col-md-4">
     <select id="selectSubclass" name="selectSubclass" class="form-control">
@@ -78,13 +70,11 @@ $(function() {
 <div class="form-group">
   <label class="col-md-4 control-label" for="send">Enviar correu</label>
   <div class="col-md-4">
-    <button id="send" name="send" class="btn btn-primary">Enviar</button>
+    <button id="send" type="submit" name="send" class="btn btn-primary">Enviar</button>
   </div>
 </div>
-
 </fieldset>
 </form>
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
