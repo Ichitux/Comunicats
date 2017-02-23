@@ -5,6 +5,7 @@ ini_set('error_reporting', E_ALL);
 
     $host = $_POST['domini'];
     $adress = $_POST['destination'];
+    $output = "";
 if(isset($_POST['selectComunicat'])){
     $select1 = $_POST['selectComunicat'];
     switch ($select1) {
@@ -26,17 +27,27 @@ Si teniu cap dubte estem a la vostra disposició, podeu contactar amb nosaltres 
 Salutacions cordials.</br>";
             break;
         case 'com2': handleCom2(); break;
-        case 'def':
-            echo '';
-            break;
     }
 }
 function handleCom2(){
 		$select2 = $_POST['segonComunicat'];
 		switch($select2) {
 			case 'comSta': handleCom2Sta(); break;
-			case 'comCold':
-				$output = "Benvolgut client,</br>
+			case 'comCold': comColdfusion(); break;
+			case 'comDNS': break;
+		}
+}
+function handleCom2Sta(){
+	if(isset($_POST['selectSubclass'])){
+		$select3 = $_POST['selectSubclass'];
+		switch($select3) {
+			case 'noAlias': break;
+			case 'siAlias': break;
+		}
+	}
+}
+function comColdfusion() {
+$output = "Benvolgut client,</br>
  </br>
 Ens posem en contacte amb vosaltres en referència als serveis d'allotjament (hosting) que actualment teniu contractats amb ILIMIT. Com us vem comentar en un correu previ, és necessari actualitzar la versió de PHP de la plataforma d'hostatjament per donar un millor servei, oferir les noves característiques de les versions actuals i disposar d'un entorn amb les darreres actualitzacions en matèria de seguretat per evitar quedar exposat a riscos innecessaris.</br>
  </br>
@@ -60,26 +71,14 @@ Port POP: 110</br>
 Port IMAP: 143</br>
 Cal habilitar autenticació tant per a enviar com per a rebre correu.</br>
  </br>
-A banda d'això, també podeu accedir al correu a través d'un nevegador via Webmail: <a href='https://webmail'". $host .">https://webmail.". $host . "</a></br>
+A banda d'això, també podeu accedir al correu a través d'un nevegador via Webmail: <a href='https://webmail'". $host ."'>https://webmail.". $host . "</a></br>
  </br>
 Per si teniu cap dubte o incidencia relativa a la configuració del correu us adjuntem un manual de configuració per a diferents clients.</br>
  </br>
 Us recordem que aquesta gestió serà totalment gratuïta. Disculpeu les molèsties que aquestes millores us puguin ocasionar i no dubteu en posar-vos en contacte amb nosaltres per resoldre qualsevol dubte.</br>
  </br>
 Atentament,</br>";
-			break;
-			case 'comDNS': break;
-		}
 }
-function handleCom2Sta(){
-	if(isset($_POST['selectSubclass'])){
-		$select3 = $_POST['selectSubclass'];
-		switch($select3) {
-			case 'noAlias': break;
-			case 'siAlias': break;
-		}
-	}
-}
-echo $output;
 echo $adress;
+echo $output;
 ?>

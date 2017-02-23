@@ -46,7 +46,7 @@
 	<label class="col-md-4 control-label" for="selectComunicat">Seleccionar Comunicat</label>
 		<div class="col-md-4">
 			<select id="selectComunicat" name="selectComunicat" class="form-control">
-				<option value="def">Selecciona una opció</option>
+				<option>Selecciona una opció</option>
 				<option value="com1">Comunicat 1</option>
 				<option value="com2">Comunicat 2</option>
 			</select>
