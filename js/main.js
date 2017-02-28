@@ -1,4 +1,4 @@
-$('#selectComunicat').change(function() {
+$('#selectComunicat').change(function () {
   if ($('#selectComunicat').val() == "com2") {
     $('#menu2').removeClass('hidden');
   } else {
@@ -8,7 +8,7 @@ $('#selectComunicat').change(function() {
     $('#selectSubclass').val('noAlias');
   }
 });
-$('#segonComunicat').change(function() {
+$('#segonComunicat').change(function () {
   if ($('#segonComunicat').val() == "comSta") {
     $('#menu3').removeClass('hidden');
   } else {
