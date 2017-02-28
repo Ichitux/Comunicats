@@ -36,15 +36,15 @@ function primerSwitch(){
 
 //Tercer switch
 function segonSwitch(){
-    if(isset($_POST['selectSubclass'])){
-        $tercerComunicat = $_POST['selectSubclass'];
-        switch($tercerComunicat){
-            case 'aliasNo': templateFour($host);
-            break;
-            case 'aliasSi': templateFive($host);
-            break;
-        }
-    }
+	if(isset($_POST['selectSubclass'])){
+		$tercerComunicat = $_POST['selectSubclass'];
+		switch($tercerComunicat){
+			case 'noAlias': templateFour($host);
+			break;
+			case 'siAlias': templateFive($host);
+			break;
+		}
+	}
 }
 
 //Templates 
