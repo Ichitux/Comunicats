@@ -57,7 +57,7 @@
   <label class="col-md-4 control-label" for="segonComunicat">Segon comunicat</label>
   <div class="col-md-4">
     <select id="segonComunicat" name="segonComunicat" class="form-control">
-		<option value="">Selecciona una opció</option>
+		<option value=null>Selecciona una opció</option>
       <option value="comSta">Comunicat Standard</option>
       <option value="comCold">Comunicat Coldfusion</option>
       <option value="comDNS">Comunicat ZonaDNS Fora</option>

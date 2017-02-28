@@ -5,7 +5,7 @@ ini_set('error_reporting', E_ALL);
 
     $host = $_POST['domini'];
     $adress = $_POST['destination'];
-    $output = "";
+    $output = null;
 if(isset($_POST['selectComunicat'])){
     $select1 = $_POST['selectComunicat'];
     switch ($select1) {
@@ -26,17 +26,21 @@ Si teniu cap dubte estem a la vostra disposició, podeu contactar amb nosaltres 
 </br>
 Salutacions cordials.</br>";
             break;
-        case 'com2': handleCom2(); break;
+        case 'com2': handleCom2();
     }
 }
 function handleCom2(){
+		if(!isset($_POST['segonComunicat'])){
+			echo 'tas dejao una opcion';
+		}else{
 		$select2 = $_POST['segonComunicat'];
 		switch($select2) {
 			case 'comSta': handleCom2Sta(); break;
 			case 'comCold': comColdfusion(); break;
 			case 'comDNS': break;
+			}
 		}
-}
+	}
 function handleCom2Sta(){
 	if(isset($_POST['selectSubclass'])){
 		$select3 = $_POST['selectSubclass'];
