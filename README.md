@@ -1,2 +1,3 @@
 # Comunicats
-# Comunicats
+
+<img src="example.png"/>
