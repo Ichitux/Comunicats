@@ -21,3 +21,17 @@ $('#dataMigracio').datetimepicker({
   ignoreReadonly: true,
   format: 'DD/MM/YYYY',
 });
+$('#formComs').submit(function (event) {
+  event.preventDefault();
+  var formData = $(this).serialize();
+  console.log('Datos del formulario', formData);
+  $.ajax({
+    url: 'php/main.php',
+    method: 'POST',
+    data: formData,
+  }).done(function (response) {
+    console.log('Todo chachi', response);
+  }).fail(function () {
+    console.log('Uuuuu el server cascó =o');
+  });
+});
