@@ -38,6 +38,7 @@ $(function() {
       data: formData,
     }).done(function (response) {
       console.log('Todo chachi', response);
+      document.getElementById("resultat").innerHTML = response;
     }).fail(function () {
       console.log('Uuuuu el server cascó =o!!');
     });
