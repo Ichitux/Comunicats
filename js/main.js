@@ -1,7 +1,7 @@
 /* global $ */
 $(function() {
   'use strict';
-  
+
   $('#selectComunicat').change(function () {
     if ($('#selectComunicat').val() == "com2") {
       $('#menu2').removeClass('hidden');
@@ -12,7 +12,7 @@ $(function() {
       $('#selectSubclass').val('noAlias');
     }
   });
-  
+
   $('#segonComunicat').change(function () {
     if ($('#segonComunicat').val() == "comSta") {
       $('#menu3').removeClass('hidden');

@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
 <head>
-  <title>Olakease</title>
+  <title>Comunicats Migració de Hosting</title>
   <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap-theme.min.css" />
   <link rel="stylesheet" href="/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
@@ -38,7 +38,7 @@
           <div class='input-group date' id='dataMigracio'>
             <input type='text' id="dataMigracio" name="dataMigracio" class="form-control" placeholder="Ex: 12/12/2012" readonly/>
             <span class="input-group-addon">
-<span class="glyphicon glyphicon-calendar"></span>
+              <span class="glyphicon glyphicon-calendar"></span>
             </span>
           </div>
         </div>
@@ -75,8 +75,8 @@
           <label class="col-md-4 control-label" for="selectSubclass">Casuístiques</label>
           <div class="col-md-4">
             <select id="selectSubclass" name="selectSubclass" class="form-control">
-              <option value="noAlias">Normal</option>
-              <option value="siAlias">Igniz: Alias de domini</option>
+              <option value="hosting">Normal</option>
+              <option value="mailOnly">Nomès correu</option>
             </select>
           </div>
         </div>
@@ -85,11 +85,19 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="send">Enviar correu</label>
         <div class="col-md-4">
-          <button id="send" type="submit" name="send" class="btn btn-primary">Enviar</button>
+          <input id="send" type="button" name="send" class="btn btn-primary" value="Enviar" onclick="showDiv()">
         </div>
       </div>
     </fieldset>
   </form>
+  <script>
+  function showDiv() {
+     document.getElementById('resultat').style.display = "block";
+  }
+  </script>
+  <div id="resultat" style="display:none;">
+    TEST
+  </div>
 
   <script src="/libs/jquery/dist/jquery.min.js"></script>
   <script src="/libs/moment/min/moment-with-locales.min.js"></script>

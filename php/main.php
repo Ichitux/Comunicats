@@ -5,7 +5,7 @@ ini_set('error_reporting', E_ALL);
 
 print_r($_POST);
 
-//Primer switch 
+//Primer switch
 if(isset($_POST['selectComunicat'])){
 	$primerComunicat = $_POST['selectComunicat'];
 	switch($primerComunicat){
@@ -36,15 +36,15 @@ function segonSwitch(){
 	if(isset($_POST['selectSubclass'])){
 		$tercerComunicat = $_POST['selectSubclass'];
 		switch($tercerComunicat){
-			case 'noAlias': templateFour();
+			case 'hosting': templateFour();
 			break;
-			case 'siAlias': templateFive();
+			case 'mailOnly': templateFive();
 			break;
 		}
 	}
 }
 
-//Templates 
+//Templates
 
 function templateOne(){
 	ob_start();
